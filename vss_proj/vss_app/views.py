@@ -2,6 +2,7 @@ from .forms import RegistrationForm
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
+from .forms import FeedbackForm
 
 
 # Create your views here.
@@ -31,7 +32,17 @@ def user_sidebar(request):
     return render(request,'user_sidebar.html')
 
 def user_home(request):
-    return render(request, 'user_home.html')
+    user_name = request.user.first_name or request.user.username
+    if request.method == 'POST':
+        form = FeedbackForm(request.POST)
+        if form.is_valid():
+            feedback = form.save(commit=False)
+            feedback.user = request.user
+            feedback.save()
+            return redirect('user_home')  # Refresh the page
+    else:
+        form = FeedbackForm()
+    return render(request, "user_home.html", {"user_name": user_name, "form":form})
 
 def user_search_service(request):
     return render(request,'user_search.html')

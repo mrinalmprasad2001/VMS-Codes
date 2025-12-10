@@ -12,7 +12,7 @@
 
     <!-- Welcome Section -->
     <div class="bg-white p-4 rounded shadow-sm mb-4">
-        <h4 class="fw-semibold">Welcome back, User!</h4>
+        <h4 class="fw-semibold">Welcome back, {{ user_name }} !</h4>
         <p class="text-muted mb-0">Here's a quick overview of your account.</p>
     </div>
 
@@ -47,7 +47,8 @@
         <h5 class="fw-semibold">Book a Service...</h5>
         <p class="text-muted">Need something done? Schedule an appointment with us.</p>
 
-        <button class="btn btn-primary px-4">Book Now</button>
+        <a href="{% url 'user_search' %}" class="btn btn-primary px-4">Book Now</a>
+
 
         <div class="border-top pt-3 mt-3">
             <p class="text-muted mb-0">
@@ -56,16 +57,22 @@
             </p>
         </div>
     </div>
-
     <!-- Feedback Section -->
     <div class="bg-white p-4 rounded shadow-sm mb-4">
-        <h5 class="fw-semibold">Give us feedback</h5>
-        <p class="text-muted">Your opinion helps us improve our services.</p>
+    <h5 class="fw-semibold">Give us feedback</h5>
+    <p class="text-muted">Your opinion helps us improve our services.</p>
 
-        <div class="d-flex gap-3">
-            <textarea class="form-control" rows="2" placeholder="Tell us what you think..."></textarea>
-            <button class="btn btn-secondary px-4">Submit</button>
-        </div>
+        <form method="POST">
+            {% csrf_token %}
+            
+            <div class="mb-3">
+                {{ form.message }}
+            </div>
+
+            <button class="btn btn-secondary px-4" type="submit">Submit</button>
+        </form>
     </div>
+
+
 </main>
 {% endblock %}

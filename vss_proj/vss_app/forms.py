@@ -31,3 +31,18 @@ class RegistrationForm(forms.Form):
         if pwd != cpwd:
             raise forms.ValidationError("Passwords do not match.")
         return cleaned_data
+    
+from .models import UserFeedback
+
+class FeedbackForm(forms.ModelForm):
+    class Meta:
+        model = UserFeedback
+        fields = ['message']
+        widgets = {
+            'message': forms.Textarea(attrs={
+                'class': 'form-control',
+                'rows': 2,
+                'placeholder': 'Tell us what you think...'
+            })
+        }
+    
