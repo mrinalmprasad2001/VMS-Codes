@@ -1,10 +1,27 @@
-from django.shortcuts import render
 from .forms import RegistrationForm
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login
+from django.contrib import messages
+
 
 # Create your views here.
 
 def main_home(request):
-    return render(request,'login.html')
+    if request.method == "POST":
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            print("CB:",request)
+            return redirect("user_home")
+        else:
+            messages.error(request, "Invalid username or password")
+            print("Error")
+
+    return render(request, "login.html")
 
 def user_register_page(request):
     return render(request,'user_register.html')
