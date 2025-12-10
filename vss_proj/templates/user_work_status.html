@@ -1,0 +1,185 @@
+{% extends "user_sidebar.html" %}
+{% block content %}
+<style>
+    body {
+    font-family: "Inter", sans-serif;
+    background: #f6f6f8;
+    }
+    .bg-dark-custom {
+    background-color: #101622;
+    }
+    .chip-orange {
+            background: rgba(255, 159, 67, 0.2);
+            color: #cc6e00;
+            padding: 4px 12px;
+            font-size: 12px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        .chip-green {
+            background: rgba(0, 200, 83, 0.2);
+            color: #00a346;
+            padding: 4px 12px;
+            font-size: 12px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .progress-bar {
+            background-color: #135bec !important;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+        }
+    </style>
+<div class="container py-5">
+
+    <h1 class="fw-bolder mb-4">Work Status Dashboard</h1>
+
+    <div class="row g-4">
+
+        <!-- LEFT SIDE: ONGOING SERVICES -->
+        <div class="col-lg-8">
+            <h4 class="fw-bold mb-3">Ongoing Services</h4>
+
+            <!-- CARD 1 -->
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+
+                    <div class="row g-4">
+                        <div class="col-lg-4">
+                            <div class="card-image"
+                                 style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuD3w3IIP42DS4O0DMvWRZJn1Mpa_nWEavZSjbTS1nimIXeTafgSXnTPD_WU-FlnpUz1MfHv4UgdOspWUcNWhFiOtl6f-xwsDpQQBpqzuz2TGKBhe-s-Rvwb5TrSXoHLqo-s77kk1svO-qRTMMAiN72p6vJY1TRjUrG8JjHDMCcBSTe7arwCdS205A23r25CmHUbXHfGgdX2kOxrrOIR9VN4d1W21z1LVl8f28qIspvmicTOu1AZKJpnQsSabr4PIlZHwKICuQBRwDA');">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-8">
+                            <small class="text-muted">Main Street Auto</small>
+
+                            <div class="d-flex justify-content-between align-items-start">
+                                <p class="fw-bold fs-5">My 2023 Honda Civic</p>
+                                <span class="chip-orange">In Repair</span>
+                            </div>
+
+                            <p class="text-muted mb-3">Scheduled Completion: EOD Today</p>
+
+                            <p class="fw-medium">Service Progress</p>
+
+                            <div class="progress mb-2">
+                                <div class="progress-bar" style="width:66%"></div>
+                            </div>
+
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-muted">Next Step: Final Checks</span>
+                                <button class="btn btn-primary btn-sm">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+
+                    <div class="row g-4">
+                        <div class="col-lg-4">
+                            <div class="card-image"
+                                 style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuDxRqAnnv3EsaQQu3dLELxZl8Ykc5t6hI7IoqYnxTcY8Ll9Vj6BcvuA9XhgmM1Vd0hchU-WpfBqi0Y0s7Er_smYMSIjlTpkrBeH-ZB8FwBMram6nHXHpLiLIOSja-lIG1Ip0mzgMt8SjCzuomkOkTWtdim6a4-SaHYzpAB0deH73sx-BOKQhO9Ogw7z-CqxEcEHgym-sh2X7_h6afSXh2XZZGydCL82frM0bgCEFv61xLvuco02Gsq78-nzR5u0CxgXjRVySw7PB5g');">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-8">
+                            <small class="text-muted">Precision Tune</small>
+
+                            <div class="d-flex justify-content-between align-items-start">
+                                <p class="fw-bold fs-5">2021 Toyota RAV4</p>
+                                <span class="chip-green">Ready for Pickup</span>
+                            </div>
+
+                            <p class="text-muted mb-3">Completed: 10:30 AM</p>
+
+                            <p class="fw-medium">Service Progress</p>
+
+                            <div class="progress mb-2">
+                                <div class="progress-bar" style="width:100%"></div>
+                            </div>
+
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-muted">Status: Completed</span>
+                                <button class="btn btn-primary btn-sm">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- RIGHT SIDE: COMPLETED SERVICES -->
+        <div class="col-lg-4">
+            <h4 class="fw-bold mb-3">Completed Services</h4>
+
+            <div class="card shadow-sm p-4">
+
+                <div class="position-relative mb-3">
+                    <input type="text" class="form-control ps-5" placeholder="Search services...">
+                    <span class="material-symbols-outlined position-absolute top-50 translate-middle-y ms-2 text-muted">
+                        search
+                    </span>
+                </div>
+
+                <ul class="list-group list-group-flush">
+
+                    <li class="list-group-item px-0">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <p class="fw-medium mb-0">2023 Honda Civic</p>
+                                <small class="text-muted">Main Street Auto - Oct 15, 2023</small>
+                            </div>
+                            <a href="#" class="text-primary">View Invoice</a>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item px-0">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <p class="fw-medium mb-0">2021 Toyota RAV4</p>
+                                <small class="text-muted">Precision Tune - Aug 22, 2023</small>
+                            </div>
+                            <a href="#" class="text-primary">View Invoice</a>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item px-0">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <p class="fw-medium mb-0">2023 Honda Civic</p>
+                                <small class="text-muted">Main Street Auto - Jun 05, 2023</small>
+                            </div>
+                            <a href="#" class="text-primary">View Invoice</a>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item px-0">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <p class="fw-medium mb-0">2018 Ford F-150</p>
+                                <small class="text-muted">City Auto Repair - Mar 12, 2023</small>
+                            </div>
+                            <a href="#" class="text-primary">View Invoice</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

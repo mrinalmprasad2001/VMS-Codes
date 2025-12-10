@@ -1,0 +1,198 @@
+{% extends "servicer_sidebar.html" %}
+{% block content %}
+<style>
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f6f7f8;
+    }
+    .material-symbols-outlined {
+        font-size: 20px;
+        vertical-align: middle;
+    }
+    .status-badge {
+        padding: 4px 8px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+    .status-paid {
+        background: #d1fae5;
+        color: #065f46;
+    }
+    .status-pending {
+        background: #fef3c7;
+        color: #b45309;
+    }
+    .status-refunded {
+        background: #fee2e2;
+        color: #b91c1c;
+    }
+</style>
+
+<div class="container py-5">
+    <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+        <div>
+            <h1 class="fw-bold display-5">Payments</h1>
+            <p class="text-muted">Manage and review all payment records.</p>
+        </div>
+
+        <button class="btn btn-primary d-flex align-items-center">
+            + Add Payment
+        </button>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="row g-4 mb-4">
+        <div class="col-md-4">
+            <div class="card border shadow-sm">
+                <div class="card-body">
+                    <h6 class="text-secondary">Total Revenue</h6>
+                    <h3 class="fw-bold">$125,430.00</h3>
+                    <p class="text-success fw-semibold">+2.5%</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card border shadow-sm">
+                <div class="card-body">
+                    <h6 class="text-secondary">Pending Payments</h6>
+                    <h3 class="fw-bold">$8,650.00</h3>
+                    <p class="text-warning fw-semibold">+1.2%</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card border shadow-sm">
+                <div class="card-body">
+                    <h6 class="text-secondary">Total Refunds</h6>
+                    <h3 class="fw-bold">$2,100.00</h3>
+                    <p class="text-danger fw-semibold">-0.5%</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="card border shadow-sm mb-4">
+        <div class="card-body">
+
+            <div class="row g-3 align-items-center">
+
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-text bg-white border-end-0">
+                            <span class="material-symbols-outlined">search</span>
+                        </span>
+                        <input type="text" class="form-control border-start-0" placeholder="Search by Service or ID...">
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <select class="form-select">
+                        <option>Status: All</option>
+                        <option>Paid</option>
+                        <option>Pending</option>
+                        <option>Refunded</option>
+                    </select>
+                </div>
+
+                <div class="col-md-3">
+                    <input type="date" class="form-control">
+                </div>
+
+                <div class="col-md-2">
+                    <button class="btn btn-link text-primary fw-semibold">Clear Filters</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Table -->
+    <div class="card border shadow-sm">
+        <div class="table-responsive">
+            <table class="table align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>Payment ID</th>
+                        <th>Service</th>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>#12345</td>
+                        <td class="fw-semibold">Web Hosting</td>
+                        <td>2023-10-26</td>
+                        <td>$50.00</td>
+                        <td><span class="status-badge status-paid">Paid</span></td>
+                        <td><a href="#" class="text-primary">View Details</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>#12346</td>
+                        <td class="fw-semibold">Domain Renewal</td>
+                        <td>2023-10-25</td>
+                        <td>$15.00</td>
+                        <td><span class="status-badge status-paid">Paid</span></td>
+                        <td><a href="#" class="text-primary">View Details</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>#12347</td>
+                        <td class="fw-semibold">SSL Certificate</td>
+                        <td>2023-10-24</td>
+                        <td>$25.00</td>
+                        <td><span class="status-badge status-pending">Pending</span></td>
+                        <td><a href="#" class="text-primary">View Details</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>#12348</td>
+                        <td class="fw-semibold">Cloud Storage</td>
+                        <td>2023-10-23</td>
+                        <td>$10.00</td>
+                        <td><span class="status-badge status-paid">Paid</span></td>
+                        <td><a href="#" class="text-primary">View Details</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>#12349</td>
+                        <td class="fw-semibold">Web Hosting</td>
+                        <td>2023-10-22</td>
+                        <td>$50.00</td>
+                        <td><span class="status-badge status-refunded">Refunded</span></td>
+                        <td><a href="#" class="text-primary">View Details</a></td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+        </div>
+
+        <!-- Pagination -->
+        <div class="card-footer d-flex justify-content-between align-items-center">
+            <small class="text-muted">Showing 1 to 5 of 20 results</small>
+
+            <nav>
+                <ul class="pagination mb-0">
+                    <li class="page-item"><a class="page-link" href="#">‹</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">›</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

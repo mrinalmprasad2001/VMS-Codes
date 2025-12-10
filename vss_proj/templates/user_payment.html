@@ -1,0 +1,143 @@
+{% extends "user_sidebar.html" %}
+{% block content %}
+<style>
+    body {
+        font-family: 'Manrope', sans-serif;
+        background-color: #f6f7f8;
+    }
+    .header-logo svg {
+        width: 28px;
+        height: 28px;
+        color: #137fec;
+    }
+    .card-custom {
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+    .btn-primary-custom {
+        background-color: #137fec;
+        border-color: #137fec;
+    }
+    .btn-primary-custom:hover {
+        background-color: #0d6ed0;
+        border-color: #0d6ed0;
+    }
+</style>
+<div class="container py-5">
+
+    <!-- Title -->
+    <div class="mb-4">
+        <h1 class="fw-bold">Secure Checkout</h1>
+        <p class="text-muted">Please review your order and complete your payment below.</p>
+    </div>
+
+    <div class="row g-4">
+
+        <!-- Order Summary -->
+        <div class="col-lg-4">
+            <div class="card card-custom p-4">
+                <h4 class="fw-bold mb-3">Order Summary</h4>
+
+                <div class="border-bottom pb-3 mb-3">
+                    <div class="d-flex justify-content-between mb-2">
+                        <span class="text-muted">Service A - Monthly Plan</span>
+                        <span class="fw-semibold">$50.00</span>
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-2">
+                        <span class="text-muted">One-Time Setup Fee</span>
+                        <span class="fw-semibold">$100.00</span>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between mb-2">
+                    <span class="text-muted">Subtotal</span>
+                    <span class="fw-semibold">$150.00</span>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <span class="text-muted">Tax (5%)</span>
+                    <span class="fw-semibold">$7.50</span>
+                </div>
+
+                <hr class="my-3">
+
+                <div class="d-flex justify-content-between fw-bold fs-5">
+                    <span>Total Due</span>
+                    <span>$157.50</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Payment Section -->
+        <div class="col-lg-8">
+            <div class="card card-custom p-4">
+                <h4 class="fw-bold mb-3">Payment Method</h4>
+
+                <div class="row g-3 mb-4">
+                    <div class="col-6">
+                        <button class="btn w-100 border-primary bg-primary bg-opacity-10 text-primary py-3">
+                            <i class="bi bi-credit-card fs-4 me-2"></i> Credit Card
+                        </button>
+                    </div>
+
+                    <div class="col-6">
+                        <button class="btn w-100 border py-3">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0mmc3c-UxGuIPwVl7eDPxb6ZJTFUKlNHHjo_rPIl0gzrIi10Dhoxl108jTh17fQyUBYDmskbZWYyq8dGt9F5NWmhFBxF810TsL_-y-mrcmZw2AjWrRZ5lNM-mY8lc7Ot9OS2dLYMMWEfJ8YMskQ6W-vcTTxImqZnSS2Rq7AaDVTdtA5_Oodv3AxcM_Y_-9HQd5g8vj4aPor8Cib02rAJy-L84phf036g4xJpdpOsRU9f08YGsdvtuQ-FLl9Za4l_qJSwwoJkhWaI"
+                                 height="22">
+                        </button>
+                    </div>
+                </div>
+
+                <h4 class="fw-bold mb-3">Payment Details</h4>
+
+                <form class="row g-3">
+
+                    <div class="col-12">
+                        <label class="form-label">Name on Card</label>
+                        <input type="text" class="form-control" placeholder="John Doe">
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label">Card Number</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-credit-card-2-front"></i></span>
+                            <input type="text" class="form-control" placeholder="0000 0000 0000 0000">
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+                        <label class="form-label">Expiry Date</label>
+                        <input type="text" class="form-control" placeholder="MM / YY">
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label">CVC</label>
+                        <input type="text" class="form-control" placeholder="123">
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label">Billing ZIP Code</label>
+                        <input type="text" class="form-control" placeholder="12345">
+                    </div>
+
+                    <div class="d-flex flex-wrap gap-3 pt-3">
+                        <button type="submit" class="btn btn-primary-custom text-white px-4 py-2 fw-bold">
+                            <i class="bi bi-lock-fill me-2"></i>
+                            Confirm Payment - $157.50
+                        </button>
+
+                        <a href="#" class="text-decoration-none fw-semibold text-muted">Cancel</a>
+                    </div>
+
+                    <div class="text-center text-muted small mt-3">
+                        <i class="bi bi-shield-lock"></i> Secure SSL Encrypted Payment
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

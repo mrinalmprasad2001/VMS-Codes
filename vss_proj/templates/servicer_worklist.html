@@ -1,0 +1,168 @@
+{% extends "servicer_sidebar.html" %}
+{% block content %}
+<style>
+    body {
+        font-family: "Inter", sans-serif;
+        background-color: #f8fafc;
+    }
+    .icon-box {
+        padding: 12px;
+        border-radius: 10px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+<!-- MAIN -->
+<main class="container py-4">
+    <div class="row g-4">
+        <!-- CARD 1 -->
+        <div class="col-lg-3 col-md-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-header bg-white">
+                    <div class="d-flex align-items-center">
+                        <div class="icon-box bg-primary bg-opacity-10">
+                            <span class="material-icons-outlined text-primary">add_task</span>
+                        </div>
+                        <div class="ms-3">
+                            <h5 class="fw-semibold">Service Requested</h5>
+                            <small class="text-muted">12 total requests</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li class="mb-3 d-flex justify-content-between">
+                            <div>
+                                <p class="m-0 fw-semibold">Work #SR-012</p>
+                                <small class="text-muted">Jane Doe - Plumbing</small>
+                            </div>
+                            <a href="#" class="text-primary">View</a>
+                        </li>
+
+                        <li class="mb-3 d-flex justify-content-between">
+                            <div>
+                                <p class="m-0 fw-semibold">Work #SR-011</p>
+                                <small class="text-muted">John Smith - Electrical</small>
+                            </div>
+                            <a href="#" class="text-primary">View</a>
+                        </li>
+
+                        <li class="mb-3 d-flex justify-content-between">
+                            <div>
+                                <p class="m-0 fw-semibold">Work #SR-010</p>
+                                <small class="text-muted">Alice Johnson - HVAC</small>
+                            </div>
+                            <a href="#" class="text-primary">View</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-footer bg-primary bg-opacity-10">
+                    <a href="#" class="text-primary fw-semibold">View all</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="col-lg-3 col-md-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-header bg-white">
+                    <div class="d-flex align-items-center">
+                        <div class="icon-box bg-warning bg-opacity-10">
+                            <span class="material-icons-outlined text-warning">pending_actions</span>
+                        </div>
+                        <div class="ms-3">
+                            <h5 class="fw-semibold">Pending Services</h5>
+                            <small class="text-muted">8 total pending</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li class="mb-3 d-flex justify-content-between">
+                            <div>
+                                <p class="m-0 fw-semibold">Work #PS-008</p>
+                                <small class="text-muted">Michael Wilson - Landscaping</small>
+                            </div>
+                            <a href="#" class="text-warning">View</a>
+                        </li>
+
+                        <li class="mb-3 d-flex justify-content-between">
+                            <div>
+                                <p class="m-0 fw-semibold">Work #PS-007</p>
+                                <small class="text-muted">Sarah Miller - Plumbing</small>
+                            </div>
+                            <a href="#" class="text-warning">View</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-footer bg-warning bg-opacity-10">
+                    <a href="#" class="text-warning fw-semibold">View all</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="col-lg-3 col-md-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-header bg-white">
+                    <div class="d-flex align-items-center">
+                        <div class="icon-box bg-orange bg-opacity-10">
+                            <span class="material-icons-outlined text-warning">autorenew</span>
+                        </div>
+                        <div class="ms-3">
+                            <h5 class="fw-semibold">Ongoing Services</h5>
+                            <small class="text-muted">5 in progress</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li class="mb-3 d-flex justify-content-between">
+                            <div>
+                                <p class="m-0 fw-semibold">Work #OS-005</p>
+                                <small class="text-muted">Jessica Thomas - Carpentry</small>
+                            </div>
+                            <a href="#" class="text-warning">View</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-footer bg-warning bg-opacity-10">
+                    <a href="#" class="text-warning fw-semibold">View all</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="col-lg-3 col-md-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-header bg-white">
+                    <div class="d-flex align-items-center">
+                        <div class="icon-box bg-success bg-opacity-10">
+                            <span class="material-icons-outlined text-success">task_alt</span>
+                        </div>
+                        <div class="ms-3">
+                            <h5 class="fw-semibold">Completed Services</h5>
+                            <small class="text-muted">42 finished</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li class="mb-3 d-flex justify-content-between">
+                            <div>
+                                <p class="m-0 fw-semibold">Work #CS-042</p>
+                                <small class="text-muted">Kevin Hall - Painting</small>
+                            </div>
+                            <a href="#" class="text-success">View</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-footer bg-success bg-opacity-10">
+                    <a href="#" class="text-success fw-semibold">View all</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

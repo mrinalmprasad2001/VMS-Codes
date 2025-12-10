@@ -1,0 +1,71 @@
+{% extends "user_sidebar.html" %}
+{% block content %}
+<main class="flex-grow-1 p-4">
+    <header class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold">User Home</h2>
+
+        <div class="position-relative" style="width: 280px;">
+            <span class="material-symbols-outlined position-absolute top-50 start-0 translate-middle-y ms-2 text-secondary">search</span>
+            <input type="text" class="form-control ps-5" placeholder="Search services, work status...">
+        </div>
+    </header>
+
+    <!-- Welcome Section -->
+    <div class="bg-white p-4 rounded shadow-sm mb-4">
+        <h4 class="fw-semibold">Welcome back, User!</h4>
+        <p class="text-muted mb-0">Here's a quick overview of your account.</p>
+    </div>
+
+    <!-- Services Section -->
+    <div class="bg-white p-4 rounded shadow-sm mb-4">
+        <h5 class="fw-semibold mb-3">Available services & work types</h5>
+
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="service-card">
+                    <h6 class="fw-bold">Oil Change</h6>
+                    <p class="text-muted mb-0">Routine maintenance</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-card">
+                    <h6 class="fw-bold">Tire Rotation</h6>
+                    <p class="text-muted mb-0">Chassis & Wheels</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-card">
+                    <h6 class="fw-bold">Brake Inspection</h6>
+                    <p class="text-muted mb-0">Safety Check</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Book Service Section -->
+    <div class="bg-white p-4 rounded shadow-sm mb-4">
+        <h5 class="fw-semibold">Book a Service...</h5>
+        <p class="text-muted">Need something done? Schedule an appointment with us.</p>
+
+        <button class="btn btn-primary px-4">Book Now</button>
+
+        <div class="border-top pt-3 mt-3">
+            <p class="text-muted mb-0">
+                <strong class="text-primary">Premium Cars:</strong>
+                We've completed <strong>1,200+</strong> jobs with a network of <strong>50+</strong> certified specialists.
+            </p>
+        </div>
+    </div>
+
+    <!-- Feedback Section -->
+    <div class="bg-white p-4 rounded shadow-sm mb-4">
+        <h5 class="fw-semibold">Give us feedback</h5>
+        <p class="text-muted">Your opinion helps us improve our services.</p>
+
+        <div class="d-flex gap-3">
+            <textarea class="form-control" rows="2" placeholder="Tell us what you think..."></textarea>
+            <button class="btn btn-secondary px-4">Submit</button>
+        </div>
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,153 @@
+{% extends "user_sidebar.html" %}
+{% block content %}
+<style>
+    body {
+        font-family: 'Inter', sans-serif;
+        background: #F8FAFC;
+        color: #334155;
+    }
+    .card-hover:hover {
+        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        transition: 0.3s;
+    }
+    .status-badge {
+        font-size: 0.75rem;
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-weight: 500;
+    }
+</style>
+<div class="container py-4">
+
+    <!-- Page Header -->
+    <header class="mb-4">
+        <h1 class="fw-bold text-dark">Servicer Search</h1>
+        <p class="text-secondary">Find and book the best servicers for your needs.</p>
+    </header>
+
+
+    <!-- Search Box -->
+    <div class="card shadow-sm p-4 mb-4">
+        <div class="row g-3">
+
+            <div class="col-md-7">
+                <div class="input-group">
+                    <span class="input-group-text bg-white">
+                        <i class="bi bi-search text-secondary"></i>
+                    </span>
+                    <input type="text" class="form-control" placeholder="Search by name, skill, or service…">
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <select class="form-select">
+                    <option selected disabled>All Work Types</option>
+                    <option>Plumbing</option>
+                    <option>Electrical</option>
+                    <option>Landscaping</option>
+                    <option>Cleaning</option>
+                </select>
+            </div>
+
+            <div class="col-md-2 d-grid">
+                <button class="btn btn-primary">
+                    <i class="bi bi-search"></i> Search
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Servicer List -->
+    <div class="d-flex flex-column gap-3">
+
+        <!-- Servicer 1 -->
+        <div class="card p-4 shadow-sm card-hover">
+            <div class="row g-4 align-items-center">
+
+                <div class="col-auto">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAFdeyrerDOLTPxJf_sRBb6U29QKNvDMo6TJpwKwkV1Pw6FPgHErdZo1DqHsCkp9F5ntk9AxBW-XxohRUFFtNC3WzHuJj2wuAt0qrwjU6XQG0BLO55RrUKgFmP7oMCo09OOHZTl-CBTK79pIurbCe02I5yQOinCr9GNiDCeem5eZD5rhZXojp74fsiS60YLdkgZAjXWBFdF0SMTddjS3w6KYxz9_yA20lJWuFobx7bgAzEw9uNC0wQUR24YUqMZiKpAa55aq-zkpo"
+                         class="rounded-circle border" width="80" height="80">
+                </div>
+
+                <div class="col">
+                    <h4 class="mb-1 fw-bold">Alice Johnson</h4>
+                    <span class="status-badge bg-success-subtle text-success">
+                        ● Available
+                    </span>
+
+                    <div class="text-secondary mt-2 small">
+                        <div><i class="bi bi-geo-alt"></i> New York, NY</div>
+                        <div><i class="bi bi-tools"></i> Master Plumber</div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 text-center text-md-end d-grid gap-2">
+                    <button class="btn btn-outline-secondary">More Details</button>
+                    <button class="btn btn-primary">Book Service</button>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Servicer 2 -->
+        <div class="card p-4 shadow-sm card-hover">
+            <div class="row g-4 align-items-center">
+
+                <div class="col-auto">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2FXyROeF54j1dlPJtO6VwkcwJwAgn4b5E28IjeY_cVui5RxZjvRNH0CHMfotkdBekNZJb9cTJDOP0SsqCg-2G3eWUOHYepqODbu4zfaXha29vzwV-MYpFJff3WUMxa-55BluOcUBJ54rgsBdFJ6XeUzBHCuZcGxcquzxJQu7Ka9QPP4Wu5b1ECiVC5xx-bEbm4CiFrMclgPoxfIUq9jD7XsId4IhaT2XI_T_8jzc2PmWkxxrjsp4cCnWQQrAYASbdrX0uMDAeqLM"
+                         class="rounded-circle border" width="80" height="80">
+                </div>
+
+                <div class="col">
+                    <h4 class="mb-1 fw-bold">Bob Williams</h4>
+                    <span class="status-badge bg-warning-subtle text-warning">
+                        ● Busy
+                    </span>
+
+                    <div class="text-secondary mt-2 small">
+                        <div><i class="bi bi-geo-alt"></i> Chicago, IL</div>
+                        <div><i class="bi bi-lightning-charge"></i> Certified Electrician</div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 text-center text-md-end d-grid gap-2">
+                    <button class="btn btn-outline-secondary">More Details</button>
+                    <button class="btn btn-primary">Book Service</button>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Servicer 3 -->
+        <div class="card p-4 shadow-sm card-hover">
+            <div class="row g-4 align-items-center">
+
+                <div class="col-auto">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrtpf1aY3zFuWbHExiS1B-Z14vcSc4pMD0ApYMfkUwa3ims0kpfOuT4lEuyf9cKjOVVCFTITKXJjJ-fPVjQjlVJMoOLwfNQwoayC4LqefP3T-ygGJbJYnD9JIaOYZIl42l1LR_Q35XqN4lXEcosW4cD_6xsb-4snicRUwk-C1A8y588-9b0SdWyLt9EWxSavTFBSjltZP4MubW_ixDFF1Bc7GZCmf0Hznh78LAiTMgJwt1VIg6_LF8lTExik3-UDt4UNNu5rE2ikg"
+                         class="rounded-circle border" width="80" height="80">
+                </div>
+
+                <div class="col">
+                    <h4 class="mb-1 fw-bold">Carla Davis</h4>
+                    <span class="status-badge bg-danger-subtle text-danger">
+                        ● Unavailable
+                    </span>
+
+                    <div class="text-secondary mt-2 small">
+                        <div><i class="bi bi-geo-alt"></i> Miami, FL</div>
+                        <div><i class="bi bi-brush"></i> Interior Designer</div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center text-md-end d-grid gap-2">
+                    <button class="btn btn-outline-secondary">More Details</button>
+                    <button class="btn btn-primary">Book Service</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

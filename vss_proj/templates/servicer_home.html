@@ -1,0 +1,44 @@
+{% extends "servicer_sidebar.html" %}
+{% block content %}
+<!-- YOUR ORIGINAL RIGHT SIDE CONTENT STARTS HERE -->
+<h2 class="fw-bold fs-2">Service Home UI</h2>
+<p class="text-muted">Welcome back, here's a summary of your service.</p>
+<div class="row gy-4 mt-3">
+    <div class="col-12">
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <div class="d-flex justify-content-between mb-3">
+                    <h5 class="fw-bold">Latest Works</h5>
+                    <a href="#" class="text-primary fw-semibold">View all</a>
+                </div>
+                <div class="list-group">
+                    <div class="list-group-item d-flex justify-content-between">
+                        <div>
+                            <p class="fw-semibold mb-0">Project Alpha</p>
+                            <small class="text-muted">Completed: 2 days ago</small>
+                        </div>
+                        <span class="text-success fw-bold">$1,200</span>
+                    </div>
+
+                    <div class="list-group-item d-flex justify-content-between">
+                        <div>
+                            <p class="fw-semibold mb-0">Design System Update</p>
+                            <small class="text-warning">In Progress</small>
+                        </div>
+                        <span class="fw-bold text-warning">Pending</span>
+                    </div>
+
+                    <div class="list-group-item d-flex justify-content-between">
+                        <div>
+                            <p class="fw-semibold mb-0">Marketing Website</p>
+                            <small class="text-muted">Completed: 1 week ago</small>
+                        </div>
+                        <span class="text-success fw-bold">$2,500</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

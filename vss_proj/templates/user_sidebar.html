@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Home Dashboard</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+
+<style>
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #F9FAFB;
+    }
+    .sidebar {
+        width: 260px;
+        background: #fff;
+        border-right: 1px solid #ddd;
+        min-height: 100vh;
+    }
+    .sidebar a {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 16px;
+        color: #555;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+    }
+    .sidebar a:hover {
+        background-color: #f1f1f1;
+    }
+    .sidebar a.active {
+        background-color: #3B82F6;
+        color: #fff !important;
+    }
+    .material-symbols-outlined {
+        font-size: 22px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="d-flex">
+
+<!-- Sidebar -->
+<aside class="sidebar p-4">
+    <div class="d-flex align-items-center gap-3 mb-4">
+        <span class="material-symbols-outlined text-primary fs-2">directions_car</span>
+        <h4 class="fw-bold m-0">ServiceHub</h4>
+    </div>
+
+    <nav class="d-flex flex-column gap-2 flex-grow-1">
+        <a href="{% url 'user_home' %}"
+            class="{% if request.resolver_match.url_name == 'user_home' %}active{% endif %}">
+            <span class="material-symbols-outlined">home</span>
+            Home
+        </a>
+        <a href="{% url 'user_search' %}"
+            class="{% if request.resolver_match.url_name == 'user_search' %}active{% endif %}">
+            <span class="material-symbols-outlined">search</span>
+            Search Services
+        </a>
+        <a href="{% url 'user_work_status' %}"
+            class="{% if request.resolver_match.url_name == 'user_work_status' %}active{% endif %}">
+            <span class="material-symbols-outlined">build</span>
+            Work Status
+        </a>
+        <a href="{% url 'user_payment' %}"
+            class="{% if request.resolver_match.url_name == 'user_payment' %}active{% endif %}">
+            <span class="material-symbols-outlined">payment</span>
+            Payment
+        </a>
+        <a href="#">
+            <span class="material-symbols-outlined">feedback</span>
+            Feedback
+        </a>
+    </nav>
+
+    <div>
+        <a href="{% url 'user_profile' %}"
+            class="{% if request.resolver_match.url_name == 'user_profile' %}active{% endif %}">
+            <span class="material-symbols-outlined">account_circle</span>
+            Profile
+        </a>
+    </div>
+</aside>
+
+<!-- Content Section -->
+<div class="flex-grow-1 p-4">
+    {% block content %}
+    {% endblock %}
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

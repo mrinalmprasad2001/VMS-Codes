@@ -1,0 +1,148 @@
+{% extends "user_sidebar.html" %}
+{% block content %}
+    <style>
+        body {
+            background-color: #f4f4f5;
+            font-family: 'Roboto', sans-serif;
+            color: #18181b;
+        }
+        .card-custom {
+            border-radius: 0.75rem;
+            background-color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .btn-primary {
+            background-color: #3b82f6 !important;
+            border-color: #3b82f6 !important;
+        }
+        .btn-primary:hover {
+            background-color: #2563eb !important;
+        }
+        .profile-img {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .edit-icon-btn {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #3b82f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .edit-icon-btn i {
+            font-size: 15px;
+            color: #fff;
+        }
+    </style>
+<div class="container py-5 d-flex justify-content-center">
+    <main class="w-100" style="max-width: 900px;">
+
+        <!-- Page Title -->
+        <h1 class="fw-bold mb-4">User Profile Edit</h1>
+
+        <div class="d-flex flex-column gap-4">
+
+            <!-- Profile Section -->
+            <div class="card card-custom p-4">
+                <h2 class="fs-5 fw-semibold mb-4">My Profile</h2>
+
+                <div class="d-flex align-items-center gap-4">
+                    <div class="position-relative">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXUVY9chroLP-un2VvvbdGTWyLm7nZFMDFPYAGIdljmg96VR4T3YO70KVI8oUW15YS7nJBpT1X4etJyiN6QWjFheb7pwvLtnDH32DNnfE9YNhu5Emrxpivt8GNzx0z8i7Z7YYuovOZ8dIjnYwJEUGgxC-RE0m9nwb0_rAxuW91hyXofajUKC36-WN85JIehHWO0u5ou25nUJPZE7At4MtXaAyz1yamhCYWfFCcdAUueFx7ee-qkZLBI4-ns6LoUEbLZPjAF6rKl1g"
+                             alt="Profile Picture"
+                             class="profile-img">
+
+                        <button class="btn edit-icon-btn position-absolute bottom-0 end-0">
+                            <i class="bi bi-pencil-fill"></i>
+                        </button>
+                    </div>
+
+                    <div>
+                        <p class="fs-4 fw-bold mb-0">Olivia Rhye</p>
+                        <p class="text-muted">@olivia_rhye</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personal Information -->
+            <div class="card card-custom p-4">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2 class="fs-5 fw-semibold">Personal Information</h2>
+                    <button class="btn btn-primary btn-sm px-4">Edit</button>
+                </div>
+
+                <form class="row g-4">
+
+                    <div class="col-sm-6 col-lg-4">
+                        <label class="form-label">First Name</label>
+                        <input type="text" class="form-control" value="Olivia" readonly>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" class="form-control" value="Rhye" readonly>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" value="olivia@example.com" readonly>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4">
+                        <label class="form-label">Phone Number</label>
+                        <input type="text" class="form-control" value="+1 (555) 000-0000" readonly>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4 d-flex flex-column">
+                        <label class="form-label">Password</label>
+                        <button type="button" class="btn btn-outline-primary">
+                            Change Password
+                        </button>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4">
+                        <label class="form-label">User Role</label>
+                        <input type="text" class="form-control" value="Administrator" readonly>
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- Address Section -->
+            <div class="card card-custom p-4">
+                <h2 class="fs-5 fw-semibold mb-4">Address</h2>
+
+                <form class="row g-4">
+
+                    <div class="col-lg-4 col-sm-6">
+                        <label class="form-label">Home</label>
+                        <input type="text" class="form-control" placeholder="123 Main St">
+                    </div>
+
+                    <div class="col-lg-4 col-sm-6">
+                        <label class="form-label">City</label>
+                        <input type="text" class="form-control" placeholder="Anytown">
+                    </div>
+
+                    <div class="col-lg-4 col-sm-6">
+                        <label class="form-label">Postal Code</label>
+                        <input type="text" class="form-control" placeholder="12345">
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- Buttons -->
+            <div class="d-flex justify-content-end gap-3 pt-3">
+                <button class="btn btn-outline-secondary px-4 py-2">Cancel</button>
+                <button class="btn btn-primary px-4 py-2">Save Changes</button>
+            </div>
+
+        </div>
+    </main>
+</div>
+{% endblock %}

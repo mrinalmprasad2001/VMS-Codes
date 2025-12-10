@@ -1,0 +1,138 @@
+{% extends "servicer_sidebar.html" %}
+{% block content %}
+<style>
+    body {
+        font-family: "Poppins", sans-serif;
+        background-color: #F3F4F6;
+        color: #111827;
+    }
+    .dark-mode {
+        background-color: #111827;
+        color: #F9FAFB;
+    }
+    .card-custom {
+        background: #FFFFFF;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .profile-img {
+        height: 90px;
+        width: 90px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    .edit-icon {
+        position: absolute;
+        bottom: -2px;
+        right: -2px;
+        height: 32px;
+        width: 32px;
+        border-radius: 50%;
+        background: #4F46E5;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        font-size: 18px;
+    }
+</style>
+<div class="container py-5">
+    <h1 class="text-center mb-4 fw-bold">Servicer Profile Edit</h1>
+
+    <!-- Profile Section -->
+    <div class="card-custom mb-4">
+        <h4 class="fw-semibold mb-4">My Profile</h4>
+
+        <div class="d-flex align-items-center gap-4">
+            <div class="position-relative">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgSqdWHiV_sAJvjTtw41aX-uwavNe_3YcbkTUQtK9lmfsGEyvU2rRtdrK4C8q8zPQ4fCL-j0IMo59yCit60Ndsb8qojaDMKUAhjBJ5PsZi72Y4LShdZXyrw1bDcQBJ3yksIpqos_mPET3COmrKPr-rNieAAZoyf_lIprfpMKmuB5mxv0reIius8Q2-UEy7IgZUutGzNc89HvA_tH07lkIFaP4YqjCjN2pF4F5qNH2ZGV9nTNvVockUfJlBT7FecOmA66GOZQrrOoo"
+                     class="profile-img" alt="profile">
+
+                <div class="edit-icon">
+                    <span class="material-symbols-outlined">photo_camera</span>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="fw-bold">Company Full Name</h3>
+                <p class="text-secondary mb-0">Username</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Personal Info -->
+    <div class="card-custom mb-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h4 class="fw-semibold">Personal Information</h4>
+            <button class="btn btn-primary d-flex align-items-center">
+                <span class="material-symbols-outlined me-1">edit</span>Edit
+            </button>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <label class="form-label">First Name</label>
+                <input type="text" class="form-control" value="John">
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-label">Last Name</label>
+                <input type="text" class="form-control" value="Doe">
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" value="john.doe@example.com">
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-label">Phone Number</label>
+                <input type="text" class="form-control" value="+1 (555) 123-4567">
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-label">Password</label>
+                <input type="password" class="form-control" value="••••••••">
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-label">User Role</label>
+                <input type="text" class="form-control" value="Administrator" readonly>
+            </div>
+        </div>
+    </div>
+
+    <!-- Address -->
+    <div class="card-custom mb-4">
+        <h4 class="fw-semibold mb-3">Address</h4>
+
+        <div class="row g-4">
+            <div class="col-md-12">
+                <label class="form-label">Company Address</label>
+                <input type="text" class="form-control" value="123 Main Street">
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-label">City</label>
+                <input type="text" class="form-control" value="Anytown">
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-label">Postal Code</label>
+                <input type="text" class="form-control" value="12345">
+            </div>
+        </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="d-flex justify-content-end gap-3">
+        <button class="btn btn-secondary">Cancel</button>
+        <button class="btn btn-primary">Save Changes</button>
+    </div>
+</div>
+{% endblock %}
