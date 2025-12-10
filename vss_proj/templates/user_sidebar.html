@@ -53,33 +53,32 @@
         <span class="material-symbols-outlined text-primary fs-2">directions_car</span>
         <h4 class="fw-bold m-0">ServiceHub</h4>
     </div>
-
+    {% with current=request.resolver_match.url_name %}
     <nav class="d-flex flex-column gap-2 flex-grow-1">
-        <a href="{% url 'user_home' %}"
-            class="{% if request.resolver_match.url_name == 'user_home' %}active{% endif %}">
+
+        <a href="{% url 'user_home' %}" class="{% if current == 'user_home' %}active{% endif %}">
             <span class="material-symbols-outlined">home</span>
             Home
         </a>
-        <a href="{% url 'user_search' %}"
-            class="{% if request.resolver_match.url_name == 'user_search' %}active{% endif %}">
+
+        <a href="{% url 'user_search' %}" class="{% if current == 'user_search' %}active{% endif %}">
             <span class="material-symbols-outlined">search</span>
             Search Services
         </a>
-        <a href="{% url 'user_work_status' %}"
-            class="{% if request.resolver_match.url_name == 'user_work_status' %}active{% endif %}">
+
+        <a href="{% url 'user_work_status' %}" class="{% if current == 'user_work_status' %}active{% endif %}">
             <span class="material-symbols-outlined">build</span>
             Work Status
         </a>
-        <a href="{% url 'user_payment' %}"
-            class="{% if request.resolver_match.url_name == 'user_payment' %}active{% endif %}">
+
+        <a href="{% url 'user_payment' %}" class="{% if current == 'user_payment' %}active{% endif %}">
             <span class="material-symbols-outlined">payment</span>
             Payment
         </a>
-        <a href="#">
-            <span class="material-symbols-outlined">feedback</span>
-            Feedback
-        </a>
+
     </nav>
+    {% endwith %}
+
 
     <div>
         <a href="{% url 'user_profile' %}"

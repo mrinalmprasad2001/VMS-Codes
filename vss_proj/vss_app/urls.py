@@ -5,7 +5,6 @@ urlpatterns=[
     path('',views.main_home,name='login_page'),
     path('user_register/',views.user_register_page,name='user_register'),
     path('servicer_register/',views.servicer_register_page,name='servicer_register'),
-    path('user_dashboard/',views.user_sidebar,name='user_dashboard'),
     path('user_dashboard/home',views.user_home,name='user_home'),
     path('user_dashboard/search',views.user_search_service,name='user_search'),
     path('user_dashboard/work_status',views.user_work_status,name='user_work_status'),
